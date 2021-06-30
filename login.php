@@ -4,7 +4,7 @@ session_start();
 ?>
 <html>
 <head>
-    <title>Sign in</title>
+    <title>Log in</title>
     <link rel="stylesheet" href="assets/css/man.css">
     <script>
         function checkforblank(){
