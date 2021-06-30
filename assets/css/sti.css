@@ -42,7 +42,19 @@ input[type=text],input[type=email], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+table{
+    width:100%;
 
+}
+
+
+table tr td:first-child{
+    width:750px;
+}
+
+table tr td:last-child{
+    width:calc(100% - 750px);
+}
 .button {
     background-color: #006699;
     color: white;

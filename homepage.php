@@ -44,7 +44,7 @@
                 <td>$last_name</td>
                 <td>$email</td>
                 <td>$type</td>
-                <td> <form  action='edit_user.php'  method='post'>
+                <td> <form  action='eu.php'  method='post'>
                     <button type ='submit' name='user' class='wbtn' value='$id'>Edit User</button></form></td>
               </tr>";
         }

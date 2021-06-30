@@ -8,15 +8,15 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
-    <link rel="stylesheet" href="assets/css/st.css">
+    <link rel="stylesheet" href="assets/css/sti.css">
 
 </head>
-<!-- HTML -->
+
 
 <body>
 
 <div class="sidebar">
-    <a herf="#"><div>Existing users</div></a>
+    <a herf="homepage.php"><div>Existing users</div></a>
     <div>Menu Item 2</div>
     <div>Menu Item 3</div>
 </div>
@@ -24,8 +24,13 @@ session_start();
 <div class="body-text">
     <h1>Vacation System </h1>
     <h2>Edit user</h2>
+    <?php
+    if (isset($_GET["msg"]) && $_GET["msg"] == 'changed') {
+        print "<p style='color:red'>Data were updated!<p>"; }
+    ?>
+
         <?php
-        $ch=$_POST['user'];
+        $ch=$_SESSION["ch_id"];
         $us = mysqli_query($conn,"select * from user where id_user='$ch'");
         while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
             $first_name=$row['first_name'];
@@ -34,47 +39,48 @@ session_start();
             $type=$row['type'];
         }
         ?>
-
+    <div class="float-container">
         <form action="change_edited.php" method="post">
             <br>
-            <label for="fname"><b>First Name</b></label>
-            <table class="table table-bordered" id="telephone">
+            <label for="fname">First Name</label>
+            <table class="table table-bordered" id="f-name">
                 <tr>
                     <td><input type="text" value="<?php echo "$first_name"; ?>" name="fname"  class="form-control name_list" /></td>
                     <td>
-                  <button type = 'submit' name='firstname' class='wbtn'> Change</button>
+                  <button type = 'submit' name='f-name' class='wbtn'> Change</button>
                     </td>
                 </tr>
             </table>
         </form>
         <form action="change_edited.php" method="post">
             <br>
-            <label for="lname"><b>Last Name</b></label>
-            <table class="table table-bordered" id="telephone">
+            <label for="lname">Last Name</label>
+            <table class="table table-bordered" id="l-name">
                 <tr>
                     <td><input type="text" value="<?php echo "$last_name"; ?>" name="lname"  class="form-control name_list" /></td>
                     <td>
-                        <button type = 'submit' name='lastname' class='wbtn'> Change</button>
+                        <button type = 'submit' name='l-name' class='wbtn'> Change</button>
                     </td>
                 </tr>
             </table>
         </form>
         <form action="change_edited.php" method="post">
             <br>
-            <label for="email"><b>Last Name</b></label>
-            <table class="table table-bordered" id="telephone">
+            <label for="email">Email</label>
+            <table class="table table-bordered" id="e-mail">
                 <tr>
-                    <td><input type="text" value="<?php echo "$email"; ?>" name="email"  class="form-control name_list" /></td>
+                    <td><input type="email" value="<?php echo "$email"; ?>" id="email" name="email"   onblur="validateEmail(this);" class="form-control name_list" /></td>
                     <td>
-                        <button type = 'submit' name='email' class='wbtn'> Change</button>
+                        <button type = 'submit' name='e-mail' class='wbtn'> Change</button>
                     </td>
                 </tr>
             </table>
+            <br> <span id='messageEmail'></span>
         </form>
         <form action="change_edited.php" method="post">
             <br>
             <label for="type">User Type</label>
-            <table class="table table-bordered" id="telephone">
+            <table class="table table-bordered" id="u-type">
                 <tr>
                     <td>
                         <select id="usertype" name="usertype">
@@ -88,14 +94,15 @@ session_start();
                             ?>
                         </select></td>
                     <td>
-                        <button type = 'submit' name='email' class='wbtn'> Change</button>
+                        <button type = 'submit' name='u-type' class='wbtn'> Change</button>
                     </td>
                 </tr>
             </table>
         </form>
-
+    </div>
 
 </div>
 
 </body>
+<script src="assets/js/emailcheck.js"></script>
 </html>
