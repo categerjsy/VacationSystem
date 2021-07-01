@@ -5,7 +5,7 @@ body
     font-family: sans-serif;
     background: #b8b8b8;
     background-size: cover;
-    background-position: center;`
+    background-position: center;
 }
 
 .sidebar {
@@ -15,14 +15,8 @@ body
     top: 0;
     right: 0;
     padding-top: 40px;
-    background-color: #006699;
 }
 
-.sidebar div {
-    padding: 8px;
-    font-size: 24px;
-    display: block;
-}
 
 .body-text {
     margin: 8% auto 0;

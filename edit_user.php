@@ -7,7 +7,7 @@ session_start();
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Homepage</title>
+    <title>Edit user</title>
     <link rel="stylesheet" href="assets/css/sti.css">
 
 </head>
@@ -15,10 +15,9 @@ session_start();
 
 <body>
 
+
 <div class="sidebar">
-    <a herf="homepage.php"><div>Existing users</div></a>
-    <div>Menu Item 2</div>
-    <div>Menu Item 3</div>
+    <button class='wbtn'><a href="create_user.php">Create user</a></button>
 </div>
 
 <div class="body-text">
@@ -47,7 +46,7 @@ session_start();
                 <tr>
                     <td><input type="text" value="<?php echo "$first_name"; ?>" name="fname"  class="form-control name_list" /></td>
                     <td>
-                  <button type = 'submit' name='f-name' class='wbtn'> Change</button>
+                  <button type = 'submit' name='f-name' class='wbtnm'> Change</button>
                     </td>
                 </tr>
             </table>
@@ -59,7 +58,7 @@ session_start();
                 <tr>
                     <td><input type="text" value="<?php echo "$last_name"; ?>" name="lname"  class="form-control name_list" /></td>
                     <td>
-                        <button type = 'submit' name='l-name' class='wbtn'> Change</button>
+                        <button type = 'submit' name='l-name' class='wbtnm'> Change</button>
                     </td>
                 </tr>
             </table>
@@ -71,7 +70,7 @@ session_start();
                 <tr>
                     <td><input type="email" value="<?php echo "$email"; ?>" id="email" name="email"   onblur="validateEmail(this);" class="form-control name_list" /></td>
                     <td>
-                        <button type = 'submit' name='e-mail' class='wbtn'> Change</button>
+                        <button type = 'submit' name='e-mail' class='wbtnm'> Change</button>
                     </td>
                 </tr>
             </table>
@@ -94,7 +93,7 @@ session_start();
                             ?>
                         </select></td>
                     <td>
-                        <button type = 'submit' name='u-type' class='wbtn'> Change</button>
+                        <button type = 'submit' name='u-type' class='wbtnm'> Change</button>
                     </td>
                 </tr>
             </table>

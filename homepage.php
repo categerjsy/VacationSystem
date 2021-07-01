@@ -16,9 +16,7 @@
 <body>
 
 <div class="sidebar">
-    <a herf="#"><div>Existing users</div></a>
-    <div>Menu Item 2</div>
-    <div>Menu Item 3</div>
+    <button class='wbtn'><a href="create_user.php">Create user</a></button>
 </div>
 
 <div class="body-text">
