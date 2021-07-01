@@ -23,9 +23,15 @@ session_start();
 <div class="body-text">
     <h1>Vacation System </h1>
     <h2>Create user</h2>
+    <?php
+    if (isset($_GET["msg"]) && $_GET["msg"] == 'plen') {
+        print "<p style='color:red'>Length of password must be 5 to 15 characters!<p>"; }
+    if (isset($_GET["msg"]) && $_GET["msg"] == 'cp') {
+        print "<p style='color:red'>Passwords not matching please try again!<p>"; }
+    ?>
 
     <div class="float-container">
-        <form action="change_edited.php" method="post">
+        <form action="cu.php" method="post">
             <br>
             <label for="fname">First Name</label>
             <input type="text" placeholder="First Name" name="fname"  class="form-control name_list" />
@@ -34,7 +40,7 @@ session_start();
             <input type="text" placeholder="Last Name" name="lname"  />
             <label for="email">Email</label>
             <input type="email" placeholder="E-mail" id="email" name="email"   onblur="validateEmail(this);" />
-            <br> <span id='messageEmail'></span>
+            <br> <span id='messageEmail'></span><br>
             <label for="type">User Type</label>
             <select id="usertype" name="usertype">
                 <option value="admin">admin</option>
