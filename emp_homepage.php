@@ -24,28 +24,34 @@ session_start();
     <h2>My applications </h2>
     <table id="employees">
         <tr>
-            <th>Date from</th>
-            <th>Date to</th>
+            <th>Date submitted</th>
+            <th>Days requested</th>
             <th>Reason</th>
-            <th>Type</th>
+            <th>Days</th>
+            <th>Status</th>
         </tr>
         <?php
-//        $us = mysqli_query($conn,"select * from user");
-//        while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
-//            $first_name=$row['first_name'];
-//            $last_name=$row['last_name'];
-//            $email=$row['email'];
-//            $type=$row['type'];
-//            $id=$row['id_user'];
-//            echo "<tr>
-//                <td>$first_name</td>
-//                <td>$last_name</td>
-//                <td>$email</td>
-//                <td>$type</td>
-//                <td> <form  action='eu.php'  method='post'>
-//                    <button type ='submit' name='user' class='wbtn' value='$id'>Edit User</button></form></td>
-//              </tr>";
-//        }
+        $this_user=$_SESSION["id"];
+        $us = mysqli_query($conn,"select * from does where id_user='$this_user'");
+        while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
+            $id_ap=$row["id_application"];
+            $u = mysqli_query($conn,"select * from application where id_application='$id_ap'");
+            while ($row = mysqli_fetch_array($u, MYSQLI_ASSOC)) {
+                $date_sub=$row["date_sub"];
+                $start = $row["vacation_start"];
+                $end =$row["vacation_end"];
+                $diff = abs(strtotime($end) - strtotime($start))/86400 ;
+                $r=$row["reason"];
+                $st=$row["status"];
+                echo "<tr>
+                <td>$date_sub</td>
+                <td>$start - $end</td> 
+                <td>$r</td>
+                <td>$diff</td>    
+                <td>$st</td>
+              </tr>";
+            }
+        }
         ?>
     </table>
 </div>

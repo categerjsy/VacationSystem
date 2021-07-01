@@ -1,6 +1,6 @@
 <?php
 include 'config.php';
-
+session_start();
 $firstname=$_POST['fname'];
 $lastname=$_POST['lname'];
 $email=$_POST['email'];
