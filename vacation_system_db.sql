@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: localhost
--- Χρόνος δημιουργίας: 01 Ιουλ 2021 στις 07:45:19
+-- Χρόνος δημιουργίας: 01 Ιουλ 2021 στις 07:58:20
 -- Έκδοση διακομιστή: 10.5.3-MariaDB
 -- Έκδοση PHP: 7.4.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `application` (
   `id_application` int(11) NOT NULL,
-  `state` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL,
   `reason` text NOT NULL,
   `vocation_end` date NOT NULL,
   `vocation_start` date NOT NULL,

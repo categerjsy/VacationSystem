@@ -26,7 +26,7 @@ session_start();
         <tr>
             <th>Date from</th>
             <th>Date to</th>
-            <th>E</th>
+            <th>Reason</th>
             <th>Type</th>
         </tr>
         <?php
