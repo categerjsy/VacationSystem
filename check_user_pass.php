@@ -25,8 +25,15 @@ if($email && $password){
             }
             $_SESSION["id"] = $id;
 
-			header("location:homepage.php");
-			
+
+            $ad = mysqli_query($conn,"select * from user where type='admin' AND id_user='$id'");
+            while ($row = mysqli_fetch_array($ad, MYSQLI_ASSOC)) {
+                header("location:homepage.php");
+            }
+            $ad = mysqli_query($conn,"select * from user where type='employee' AND id_user='$id'");
+            while ($row = mysqli_fetch_array($ad, MYSQLI_ASSOC)) {
+                header("location:emp_homepage.php");
+            }
 		}else{
 
             $location="/VacationSystem/login.php?msg=wrong";

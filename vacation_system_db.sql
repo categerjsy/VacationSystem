@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: localhost
--- Χρόνος δημιουργίας: 30 Ιουν 2021 στις 12:02:21
+-- Χρόνος δημιουργίας: 01 Ιουλ 2021 στις 07:45:19
 -- Έκδοση διακομιστή: 10.5.3-MariaDB
 -- Έκδοση PHP: 7.4.6
 
@@ -32,7 +32,8 @@ CREATE TABLE `application` (
   `state` varchar(20) NOT NULL,
   `reason` text NOT NULL,
   `vocation_end` date NOT NULL,
-  `vocation_start` date NOT NULL
+  `vocation_start` date NOT NULL,
+  `date_sub` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -60,6 +61,15 @@ CREATE TABLE `user` (
   `email` varchar(25) NOT NULL,
   `type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `user`
+--
+
+INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `password`, `email`, `type`) VALUES
+(1, 'Katerina', 'Gerakianaki', 'test12345', 'katerinagerak99@gmail.com', 'admin'),
+(3, 'Katerina Maria', 'Gerakianaki', 'asd123', 'categerjsy@yahoo.gr', 'employee'),
+(4, 'Maria', 'Georgiou', '123!@#', 'margeorg@gmail.com', 'employee');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -97,7 +107,7 @@ ALTER TABLE `application`
 -- AUTO_INCREMENT για πίνακα `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
