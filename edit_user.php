@@ -31,7 +31,8 @@ session_start();
     ?>
 
         <?php
-        $ch=$_SESSION["ch_id"];
+        $ch=$_COOKIE["fcookie"];
+        $_SESSION["ch_id"]=$ch;
         $us = mysqli_query($conn,"select * from user where id_user='$ch'");
         while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
             $first_name=$row['first_name'];
