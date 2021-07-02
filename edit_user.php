@@ -17,7 +17,9 @@ session_start();
 
 
 <div class="sidebar">
-    <button class='wbtn'><a href="create_user.php">Create user</a></button>
+    <a href="homepage.php"><button class='wbtn'>Homepage</button></a>
+    <br>
+    <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 
 <div class="body-text">

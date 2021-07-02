@@ -7,10 +7,8 @@ $reason=$_POST['reason'];
 
 
 $now =  date ('d/m/Y');
-//$vs_date = date('d/m/Y', $vac_s);
-//$ve_date = date('d/m/Y', $vac_e);
-echo "ve $vac_e";
-echo "vs $vac_s";
+
+
     if($vac_s>$now){
         if($vac_e>$vac_s) {
             $sql = "INSERT INTO application (status, reason,vacation_end, vacation_start)
@@ -21,9 +19,27 @@ echo "vs $vac_s";
             if ($qry) {
                 $id_ap = mysqli_insert_id($conn);
                 $id_u=$_SESSION["id"] ;
+
                 mysqli_query($conn, "INSERT INTO does (id_user,id_application)
 				VALUES (' $id_u','$id_ap')");
-                // Redirecting To Other Page
+
+                $u = mysqli_query($conn,"select * from user where id_user='$id_u'");
+                while ($row = mysqli_fetch_array($u, MYSQLI_ASSOC)) {
+                    $fn=$row["first_name"];
+                    $ln=$row["last_name"];
+                }
+                $us = mysqli_query($conn,"select * from user where type='admin'");
+                while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
+                    $admin_email=$row["email"];
+
+                    mail("$admin_email",'Request time of from work',"Dear supervisor, employee $fn $ln requested for some time off, starting on $vac_s
+                            andending on $vac_e, stating the reason:
+                            $reason
+                            Click on one of the below links to approve or reject the application: http://localhost/VacationSystem/approve.php?id=$id_ap -
+                            http://localhost/VacationSystem/reject.php?id=$id_ap",'From: vacationsystem1@gmail.com');
+                }
+
+
                 $location = "/VacationSystem/emp_homepage.php";
                 header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
             }

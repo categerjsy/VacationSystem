@@ -8,11 +8,17 @@ session_start();
     <link rel="stylesheet" href="assets/css/man.css">
     <script>
         function checkforblank(){
+            if(document.getElementById('email').value == ""){
+                alert('Please enter your email!');
+                document.getElementById('email').style.borderColor= "red";
+                return false;
+            }
             if(document.getElementById('ps').value == ""){
                 alert('Please enter your password!');
                 document.getElementById('ps').style.borderColor= "red";
                 return false;
             }
+
         }
     </script>
 </head>

@@ -17,7 +17,9 @@ session_start();
 
 
 <div class="sidebar">
-    <button class='wbtn'><a href="homepage.php">Homepage</a></button>
+    <a href="homepage.php"><button class='wbtn'>Homepage</button></a>
+    <br>
+    <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 
 <div class="body-text">
@@ -34,12 +36,12 @@ session_start();
         <form action="cu.php" method="post">
             <br>
             <label for="fname">First Name</label>
-            <input type="text" placeholder="First Name" name="fname"  class="form-control name_list" />
+            <input type="text" placeholder="First Name" name="fname"  class="form-control name_list" required/>
             <br>
             <label for="lname">Last Name</label>
-            <input type="text" placeholder="Last Name" name="lname"  />
+            <input type="text" placeholder="Last Name" name="lname"  required/>
             <label for="email">Email</label>
-            <input type="email" placeholder="E-mail" id="email" name="email"   onblur="validateEmail(this);" />
+            <input type="email" placeholder="E-mail" id="email" name="email"   onblur="validateEmail(this);" required/>
             <br> <span id='messageEmail'></span><br>
             <label for="type">User Type</label>
             <select id="usertype" name="usertype">

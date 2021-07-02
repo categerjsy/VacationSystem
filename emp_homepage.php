@@ -16,7 +16,9 @@ session_start();
 <body>
 
 <div class="sidebar">
-    <button class='wbtn'><a href="create_ap.php">Create application</a></button>
+    <a href="create_ap.php"><button class='wbtn'>Create application</button></a>
+    <br>
+    <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 
 <div class="body-text">
@@ -35,7 +37,7 @@ session_start();
         $us = mysqli_query($conn,"select * from does where id_user='$this_user'");
         while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
             $id_ap=$row["id_application"];
-            $u = mysqli_query($conn,"select * from application where id_application='$id_ap'");
+            $u = mysqli_query($conn,"select * from application where id_application='$id_ap' order by date_sub desc");
             while ($row = mysqli_fetch_array($u, MYSQLI_ASSOC)) {
                 $date_sub=$row["date_sub"];
                 $start = $row["vacation_start"];

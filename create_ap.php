@@ -9,28 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Application</title>
     <link rel="stylesheet" href="assets/css/sti.css">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript">
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "vacationsystem1@gmail.com",
-                Password: "vacsyst1",
-                To: 'katerinagerak99@gmail.com',
-                From: "vacationsystem1@gmail.com",
-                Subject: "Sending Email using javascript",
-                Body: "Well that was easy!!",
-                Attachments: [
-                    {
-                        name: "File_Name_with_Extension",
-                        path: "Full Path of the file"
-                    }]
-            })
-                .then(function (message) {
-                    alert("Mail has been sent successfully")
-                });
-        }
-    </script>
+
 </head>
 
 
@@ -38,7 +17,9 @@ session_start();
 
 
 <div class="sidebar">
-    <button class='wbtn'><a href="emp_homepage.php">Homepage</a></button>
+    <a href="emp_homepage.php"><button class='wbtn'>Homepage</button></a>
+    <br>
+    <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 
 <div class="body-text">
@@ -64,7 +45,7 @@ session_start();
 
             </textarea>
             <br>  <br>
-            <button type = 'submit'  class='wbtn' onclick="sendMail()" >Submit</button>
+            <button type = 'submit'  class='wbtn'  >Submit</button>
             <br>
         </form>
     </div>
