@@ -18,8 +18,9 @@ if($qry){
         $u = mysqli_query($conn,"select * from user where id_user='$id_u'");
         while ($row = mysqli_fetch_array($u, MYSQLI_ASSOC)) {
             $emp_email = $row["email"];
+            $s=date("d/m/Y",strtotime($sd));
             mail("$emp_email", 'Request time of from work', "Dear employee, your supervisor has accepted your application submitted on
-$sd.", 'From: vacationsystem1@gmail.com');
+$s.", 'From: vacationsystem1@gmail.com');
         }
     }
     $location="/VacationSystem/result.php?re=approved";

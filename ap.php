@@ -10,7 +10,7 @@ $now =  date ('d/m/Y');
 
 
     if($vac_s>$now){
-        if($vac_e>$vac_s) {
+        if($vac_e>=$vac_s) {
             $sql = "INSERT INTO application (status, reason,vacation_end, vacation_start)
 				VALUES ('pending','$reason', '$vac_e','$vac_s')";
 
@@ -31,9 +31,10 @@ $now =  date ('d/m/Y');
                 $us = mysqli_query($conn,"select * from user where type='admin'");
                 while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
                     $admin_email=$row["email"];
-
-                    mail("$admin_email",'Request time of from work',"Dear supervisor, employee $fn $ln requested for some time off, starting on $vac_s
-                            andending on $vac_e, stating the reason:
+                    $ve=date("d/m/Y",strtotime($vac_e));
+                    $vs=date("d/m/Y",strtotime($vac_s));
+                    mail("$admin_email",'Request time of from work',"Dear supervisor, employee $fn $ln requested for some time off, starting on $vs
+                            andending on $ve, stating the reason:
                             $reason
                             Click on one of the below links to approve or reject the application: http://localhost/VacationSystem/approve.php?id=$id_ap -
                             http://localhost/VacationSystem/reject.php?id=$id_ap",'From: vacationsystem1@gmail.com');

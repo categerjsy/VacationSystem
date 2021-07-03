@@ -16,10 +16,11 @@ if($qry){
     while ($row = mysqli_fetch_array($d, MYSQLI_ASSOC)) {
         $id_u = $row["id_user"];
         $u = mysqli_query($conn, "select * from user where id_user='$id_u'");
+        $s=date("d/m/Y",strtotime($sd));
         while ($row = mysqli_fetch_array($u, MYSQLI_ASSOC)) {
             $emp_email = $row["email"];
             mail("$emp_email", 'Request time of from work', "Dear employee, your supervisor has rejected your application submitted on
-    $sd.", 'From: vacationsystem1@gmail.com');
+    $s.", 'From: vacationsystem1@gmail.com');
         }
     }
     $location="/VacationSystem/result.php?re=rejected";

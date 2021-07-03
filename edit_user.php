@@ -2,6 +2,10 @@
 include 'config.php';
 
 session_start();
+if(isset($_SESSION["id"])==null){
+    $location="/VacationSystem/login.php";
+    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}
 $this_user=$_SESSION["id"];
 $us = mysqli_query($conn,"select * from user where id_user='$this_user' and type='employee'");
 while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
