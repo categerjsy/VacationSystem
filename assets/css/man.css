@@ -18,7 +18,7 @@ body
 }
 .sign-in h1
 {
-	color: #006699;
+	color: #4080bf;
 	margin-bottom: 30px;
 
 }
@@ -51,7 +51,7 @@ button
 }
 .signup-btn
 {
-	background-color: #006699;
+	background-color: #4080bf;
 }
 
 hr
@@ -71,7 +71,7 @@ hr
 	border: none;
 	outline:none;
 	cursor: pointer;
-	background-color:  #006699;;
+	background-color: #4080bf;;
 }
 
 button
@@ -85,7 +85,7 @@ button
 	border: none;
 	outline:none;
 	cursor: pointer;
-	background-color:  #006699;;
+	background-color: #4080bf;;
 }
 
 

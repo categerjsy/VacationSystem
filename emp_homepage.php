@@ -16,8 +16,8 @@ session_start();
 <body>
 
 <div class="sidebar">
-    <a href="create_ap.php"><button class='wbtn'>Create application</button></a>
-    <br>
+    <a href="create_ap.php"><button class='wbtn'>Submit request</button></a>
+    <br><br>
     <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 

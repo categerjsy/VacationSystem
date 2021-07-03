@@ -18,7 +18,7 @@ session_start();
 
 <div class="sidebar">
     <a href="homepage.php"><button class='wbtn'>Homepage</button></a>
-    <br>
+    <br><br>
     <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 
@@ -45,61 +45,28 @@ session_start();
         <form action="change_edited.php" method="post">
             <br>
             <label for="fname">First Name</label>
-            <table class="table table-bordered" id="f-name">
-                <tr>
-                    <td><input type="text" value="<?php echo "$first_name"; ?>" name="fname"  class="form-control name_list" /></td>
-                    <td>
-                  <button type = 'submit' name='f-name' class='wbtnm'> Change</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <form action="change_edited.php" method="post">
+           <input type="text" value="<?php echo "$first_name"; ?>" name="fname">
             <br>
             <label for="lname">Last Name</label>
-            <table class="table table-bordered" id="l-name">
-                <tr>
-                    <td><input type="text" value="<?php echo "$last_name"; ?>" name="lname"  class="form-control name_list" /></td>
-                    <td>
-                        <button type = 'submit' name='l-name' class='wbtnm'> Change</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <form action="change_edited.php" method="post">
+            <input type="text" value="<?php echo "$last_name"; ?>" name="lname">
             <br>
             <label for="email">Email</label>
-            <table class="table table-bordered" id="e-mail">
-                <tr>
-                    <td><input type="email" value="<?php echo "$email"; ?>" id="email" name="email"   onblur="validateEmail(this);" class="form-control name_list" /></td>
-                    <td>
-                        <button type = 'submit' name='e-mail' class='wbtnm'> Change</button>
-                    </td>
-                </tr>
-            </table>
+           <input type="email" value="<?php echo "$email"; ?>" id="email" name="email"   onblur="validateEmail(this);">
             <br> <span id='messageEmail'></span>
-        </form>
-        <form action="change_edited.php" method="post">
             <br>
             <label for="type">User Type</label>
-            <table class="table table-bordered" id="u-type">
-                <tr>
-                    <td>
-                        <select id="usertype" name="usertype">
-                            <?php  if($type=="admin"){
-                                    echo "<option value='$type'>$type</option>";
-                                    echo '<option value="employee">employee</option>';
-                                    }else{
-                                    echo '<option value="employee">employee</option>?>
-                                            <option value="admin">admin</option>';
+            <select id="usertype" name="usertype">
+                <?php  if($type=="admin"){
+                    echo "<option value='$type'>$type</option>";
+                    echo '<option value="employee">employee</option>';
+                    }else{
+                    echo '<option value="employee">employee</option>?>
+                          <option value="admin">admin</option>';
                                     }
                             ?>
-                        </select></td>
-                    <td>
-                        <button type = 'submit' name='u-type' class='wbtnm'> Change</button>
-                    </td>
-                </tr>
-            </table>
+                        </select>
+            <button type = 'submit' name='u' class='wbtn'> Change</button>
+
         </form>
     </div>
 

@@ -16,7 +16,7 @@
 
 <div class="sidebar">
     <a href="create_user.php"><button class='wbtn'>Create user</button></a>
-    <br>
+    <br><br>
     <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 

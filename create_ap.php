@@ -18,7 +18,7 @@ session_start();
 
 <div class="sidebar">
     <a href="emp_homepage.php"><button class='wbtn'>Homepage</button></a>
-    <br>
+    <br><br>
     <a href="logout.php"><button class='wbtn'>Log out</button></a>
 </div>
 

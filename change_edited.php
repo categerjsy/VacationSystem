@@ -3,8 +3,7 @@ include 'config.php';
 
 session_start();
 $ch=$_SESSION["ch_id"];
-
-if (isset($_POST['e-mail'])){
+if (isset($_POST['u'])){
     $email=$_POST['email'];
 
         $sql = "UPDATE user
@@ -18,7 +17,7 @@ if (isset($_POST['e-mail'])){
         }
 
 }
-if (isset($_POST['l-name'])){
+if (isset($_POST['u'])){
     $lname=$_POST['lname'];
 
     $sql = "UPDATE user
@@ -32,7 +31,7 @@ if (isset($_POST['l-name'])){
     }
 
 }
-if (isset($_POST['f-name'])){
+if (isset($_POST['u'])){
     $fname=$_POST['fname'];
 
     $sql = "UPDATE user
@@ -46,7 +45,7 @@ if (isset($_POST['f-name'])){
     }
 
 }
-if (isset($_POST['u-type'])){
+if (isset($_POST['u'])){
     $usertype=$_POST['usertype'];
 
     $sql = "UPDATE user
