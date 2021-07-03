@@ -46,13 +46,13 @@ $now =  date ('d/m/Y');
             }
         }
         else {
-            $location = "/VacationSystem/create_ap.php";
+            $location = "/VacationSystem/create_ap.php?m=w";
             header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
 
     }
     else{
-        $location="/VacationSystem/create_ap.php";
+        $location="/VacationSystem/create_ap.php?m=w";
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
     }
 

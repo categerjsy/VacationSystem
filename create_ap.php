@@ -26,6 +26,10 @@ else {
 
 
 <body>
+<?php
+if (isset($_GET["m"]) && $_GET["m"] == 'w') {
+    print "<p style='color:red'>Something went wrong please try again!<p>"; }
+?>
 
 
 <div class="sidebar">
@@ -43,17 +47,17 @@ else {
             <br>
             <label>
                 Vacation Start:  <br>
-                <input type="date" name="vs">
+                <input type="date" name="vs" required>
             </label>
             <br>  <br>
             <label>
                 Vacation End:  <br>
-                <input type="date" name="ve">
+                <input type="date" name="ve" required>
             </label>
             <br>  <br>
             <label for="reason">Reason:</label>  <br>
 
-            <textarea id="reason" name="reason" <!--rows="4" cols="150"-->
+            <textarea id="reason" name="reason" required>
 
             </textarea>
             <br>  <br>

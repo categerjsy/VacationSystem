@@ -13,7 +13,7 @@ body
     width: 150px;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 8px;
     padding-top: 40px;
     padding-right: 50px;
 }
@@ -24,6 +24,7 @@ body
     margin-right: 150px;
     margin-left: 50px;
     font-size: 18px;
+    width: 60%;
 }
 h1,h2,label{
     color: #4080bf;
