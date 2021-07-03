@@ -2,6 +2,14 @@
 include 'config.php';
 
 session_start();
+$this_user=$_SESSION["id"];
+$us = mysqli_query($conn,"select * from user where id_user='$this_user' and type='employee'");
+while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
+    $location="/VacationSystem/emp_homepage.php";
+    header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,10 +33,6 @@ session_start();
 <div class="body-text">
     <h1>Vacation System </h1>
     <h2>Edit user</h2>
-    <?php
-    if (isset($_GET["msg"]) && $_GET["msg"] == 'changed') {
-        print "<p style='color:red'>Data were updated!<p>"; }
-    ?>
 
         <?php
         $ch=$_COOKIE["fcookie"];

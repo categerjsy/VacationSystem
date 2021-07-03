@@ -56,7 +56,9 @@ input[type=text],input[type=email], select {
     border: 4px;
     border-color: #4080bf;
 }
-
+.wbtn:hover {
+    opacity: 0.8;
+}
 a:link {
     text-decoration: none;
     color: white;

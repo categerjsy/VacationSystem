@@ -5,7 +5,7 @@ body
     font-family: sans-serif;
     background: #b8b8b8;
     background-size: cover;
-    background-position: center;`
+    background-position: center;
 }
 
 .sidebar {
@@ -59,7 +59,7 @@ table tr td:last-child{
     cursor: pointer;
     width: auto;
 }
-.button:hover {
+.wbtn:hover {
     opacity: 0.8;
 }
 .wbtnm{
