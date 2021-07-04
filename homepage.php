@@ -59,9 +59,13 @@
 <script>
     function edituser(elm) {
         var x = elm.getAttribute('value');
-        document.cookie='fcookie='+x;
-         window.location.assign("http://localhost/VacationSystem/edit_user.php");
+       document.cookie='fcookie='+x;
+      
+       window.location.assign("http://localhost/VacationSystem/edit_user.php");
+
+
     }
 </script>
+
 </body>
 </html>

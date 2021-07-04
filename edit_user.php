@@ -59,13 +59,13 @@ else {
         <form action="change_edited.php" method="post">
             <br>
             <label for="fname">First Name</label>
-           <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) {echo "$first_name";} ?>" name="fname">
+           <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) {echo "$first_name"; } ?>" name="fname">
             <br>
             <label for="lname">Last Name</label>
-            <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) { echo "$last_name";} ?>" name="lname">
+            <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) {   echo "$last_name"; } ?>" name="lname">
             <br>
             <label for="email">Email</label>
-           <input type="email" value="<?php if(isset($_COOKIE["fcookie"])) {echo "$email";} ?>" id="email" name="email"   onblur="validateEmail(this);">
+           <input type="email" value="<?php if(isset($_COOKIE["fcookie"])) { echo "$email"; } ?>" id="email" name="email"   onblur="validateEmail(this);">
             <br> <span id='messageEmail'></span>
             <br>
             <label for="type">User Type</label>
