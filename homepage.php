@@ -61,7 +61,7 @@
         var x = elm.getAttribute('value');
        document.cookie='fcookie='+x;
       
-       window.location.assign("http://localhost/VacationSystem/edit_user.php");
+       window.location.assign("http://localhost/VacationSystem/eu.php");
 
 
     }

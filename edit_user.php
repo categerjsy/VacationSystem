@@ -9,6 +9,13 @@ if(isset($_SESSION['id'])) {
         $location = "/VacationSystem/emp_homepage.php";
         header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
     }
+    if(isset($_SESSION['ch_id'])) {
+        $ch = $_SESSION["ch_id"];
+    }
+    else{
+        $location = "/VacationSystem/homepage.php";
+        header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
+    }
 }
 else {
     $location = "/VacationSystem/login.php";
@@ -39,9 +46,8 @@ else {
     <h2>Edit user</h2>
 
         <?php
-        if(isset($_COOKIE["fcookie"])) {
-            $ch = $_COOKIE["fcookie"];
-            $_SESSION["ch_id"] = $ch;
+        if(isset($_SESSION['ch_id'])) {
+
             $us = mysqli_query($conn, "select * from user where id_user='$ch'");
             while ($row = mysqli_fetch_array($us, MYSQLI_ASSOC)) {
                 $first_name = $row['first_name'];
@@ -51,27 +57,29 @@ else {
             }
         }
         else{
-            $location = "/VacationSystem/login.php";
+            $location = "/VacationSystem/homepage.php";
             header("Location: " . "http://" . $_SERVER['HTTP_HOST'] . $location);
         }
+        if(isset($_SESSION['ch_id'])) {
         ?>
     <div class="float-container">
         <form action="change_edited.php" method="post">
             <br>
             <label for="fname">First Name</label>
-           <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) {echo "$first_name"; } ?>" name="fname">
+           <input type="text" value="<?php echo "$first_name";  ?>" name="fname">
             <br>
             <label for="lname">Last Name</label>
-            <input type="text" value="<?php if(isset($_COOKIE["fcookie"])) {   echo "$last_name"; } ?>" name="lname">
+            <input type="text" value="<?php   echo "$last_name"; ?>" name="lname">
             <br>
             <label for="email">Email</label>
-           <input type="email" value="<?php if(isset($_COOKIE["fcookie"])) { echo "$email"; } ?>" id="email" name="email"   onblur="validateEmail(this);">
+           <input type="email" value="<?php echo "$email"; ?>" id="email" name="email"   onblur="validateEmail(this);">
             <br> <span id='messageEmail'></span>
             <br>
             <label for="type">User Type</label>
             <select id="usertype" name="usertype">
                 <?php
-                if(isset($_COOKIE["fcookie"])) {
+                }
+                if(isset($_SESSION['ch_id'])) {
                     if ($type == "admin") {
                         echo "<option value='$type'>$type</option>";
                         echo '<option value="employee">employee</option>';
